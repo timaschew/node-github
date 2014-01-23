@@ -1689,6 +1689,99 @@
     },
 
     "repos": {
+        "create-file": {
+            "url": "/repos/:user/:repo/contents/:path",
+            "method": "PUT",
+            "params": {
+                "$user": null,
+                "$repo": null,
+                "$path": null,
+                "message": {
+                    "type": "String",
+                    "required": true,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The commit message"
+                },
+                "content": {
+                    "type": "String",
+                    "required": true,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The new file content, Base64 encoded"
+                },
+                "branch": {
+                    "type": "String",
+                    "required": false,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The branch name, default: the repository’s default branch (usually master)"
+                }
+            }
+        },
+
+        "update-file": {
+            "url": "/repos/:user/:repo/contents/:path",
+            "method": "PUT",
+            "params": {
+                "$user": null,
+                "$repo": null,
+                "$path": null,
+                "message": {
+                    "type": "String",
+                    "required": true,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The commit message"
+                },
+                "content": {
+                    "type": "String",
+                    "required": true,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The new file content, Base64 encoded"
+                },
+                "sha": {
+                    "type": "String",
+                    "required": true,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The blob SHA of the file being replaced"
+                },
+                "branch": {
+                    "type": "String",
+                    "required": false,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The branch name, default: the repository’s default branch (usually master)"
+                }
+            }
+        },
+
+        "delete-file": {
+            "url": "/repos/:user/:repo/contents/:path",
+            "method": "DELETE",
+            "params": {
+                "$user": null,
+                "$repo": null,
+                "$path": null,
+                "message": {
+                    "type": "String",
+                    "required": true,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The commit message"
+                },
+                "branch": {
+                    "type": "String",
+                    "required": false,
+                    "validation": "",
+                    "invalidmsg": "",
+                    "description": "The branch name, default: the repository’s default branch (usually master)"
+                }
+            }
+        },
+
         "get-all": {
             "url": "/user/repos",
             "method": "GET",
